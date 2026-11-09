@@ -6,6 +6,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import NoteCard from '../components/NoteCard.jsx'
 import api from '../lib/axios.js'
+import NotesNotFound from './NotesNotFound.jsx'
 
 
 const HomePage = () => {
@@ -48,10 +49,12 @@ const HomePage = () => {
           </div>
         )}
 
+        {notes.length === 0 && !loading && !isRateLimited && <NotesNotFound />}
+
         {notes.length > 0 && !isRateLimited && !loading && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {notes.map(note => (
-              <NoteCard key={note._id} note={note} />
+              <NoteCard key={note._id} note={note} setNotes={setNotes} />
             ))}
           </div>
         )}
