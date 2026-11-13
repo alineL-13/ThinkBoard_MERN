@@ -4,7 +4,7 @@ A **To-Do List** application built with the MERN stack, created with the goal of
 
 ## About the project
 
-This project was developed as part of my journey in learning full-stack web development.
+This project was developed as part of my journey in learning full-stack web development, with the help of a Development Bootcamp tutorial.
 
 The idea was to build a task management application using:
 
