@@ -1,10 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router';
 import { useState } from 'react';
 import { ArrowLeftIcon } from "lucide-react";
 import toast from 'react-hot-toast';
 import { useNavigate } from "react-router";
-import axios from 'axios';
+import api from '../lib/axios.js';
 
 const CreatePage = () => {
 
@@ -27,7 +26,7 @@ const CreatePage = () => {
       navigate("/");
     } catch (error) {
       console.log("Error creating note", error);
-      if(error.response.status === 429) {
+      if(error.response?.status === 429) {
         toast.error("Slow down! You're creating notes too quickly. Please wait a moment before trying again.",
           {duration: 5000,
           icon: '⚠️'}
